@@ -31,7 +31,10 @@ namespace
         std::vector<std::string> shapes;
         DIR *dir = opendir("Shapes");
         if (!dir)
+        {
+            std::cerr << kColorYellow << "Warning: could not open ./Shapes directory.\n" << kColorReset;
             return shapes;
+        }
 
         dirent *entry;
         while ((entry = readdir(dir)) != nullptr)
@@ -69,12 +72,20 @@ namespace
         std::cout << kColorGreen << "Mouse controls:\n" << kColorReset;
         std::cout << "  Left click         Toggle one cell\n";
         std::cout << "  Left click + drag  Pan the grid\n";
-        std::cout << "  Mouse wheel        Zoom grid (or scroll HUD when cursor is on HUD)\n";
+        std::cout << "  Mouse wheel        Zoom grid\n";
+        std::cout << "  Mouse wheel (HUD)  Scroll shape list when cursor is on HUD\n";
     }
 
     bool isHelpRequest(const std::string &arg)
     {
         return arg == "-help" || arg == "--help" || arg == "-h" || arg == "help";
+    }
+
+    bool isPositiveNumber(const std::string &value)
+    {
+        return !value.empty() &&
+               std::all_of(value.begin(), value.end(), [](unsigned char c)
+                           { return std::isdigit(c) != 0; });
     }
 
     bool chooseStartupMode(std::string &shapeName)
@@ -121,7 +132,7 @@ namespace
                 if (choice.empty())
                     continue;
 
-                try
+                if (isPositiveNumber(choice))
                 {
                     const size_t index = std::stoul(choice);
                     if (index >= 1 && index <= shapes.size())
@@ -130,9 +141,6 @@ namespace
                         std::cout << kColorGreen << "Selected: " << shapeName << kColorReset << '\n';
                         return true;
                     }
-                }
-                catch (const std::exception &)
-                {
                 }
 
                 const std::vector<std::string>::const_iterator it = std::find(shapes.begin(), shapes.end(), choice);
