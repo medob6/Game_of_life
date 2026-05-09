@@ -132,4 +132,4 @@ make re
 
 ---
 
-**License:** All rights reserved (no LICENSE file has been added yet).
+**License:** All rights reserved.
