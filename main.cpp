@@ -1,6 +1,7 @@
 #include "include/Game.hpp"
 #include "include/GameLoop.hpp"
 #include <algorithm>
+#include <cctype>
 #include <dirent.h>
 #include <iostream>
 #include <string>
@@ -19,7 +20,9 @@ namespace
         if (dot == std::string::npos)
             return false;
 
-        const std::string ext = name.substr(dot);
+        std::string ext = name.substr(dot);
+        std::transform(ext.begin(), ext.end(), ext.begin(), [](unsigned char c)
+                       { return static_cast<char>(std::tolower(c)); });
         return ext == ".png" || ext == ".jpg" || ext == ".jpeg";
     }
 
@@ -30,7 +33,7 @@ namespace
         if (!dir)
             return shapes;
 
-        dirent *entry = nullptr;
+        dirent *entry;
         while ((entry = readdir(dir)) != nullptr)
         {
             const std::string name = entry->d_name;
