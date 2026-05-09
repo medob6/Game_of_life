@@ -12,7 +12,7 @@
 
 ![Demo placeholder](./docs/demo.gif)
 
-_Demo placeholder: add a capture of pan/zoom, cell editing, HUD pattern selection, and rewind controls._
+_TODO: Replace this placeholder with a real capture showing pan/zoom, cell editing, HUD selection, and rewind controls._
 
 ---
 
@@ -37,7 +37,7 @@ _Demo placeholder: add a capture of pan/zoom, cell editing, HUD pattern selectio
 | `Space` | Pause / resume simulation |
 | `N` | Advance one generation (single-step) |
 | `R` | Reset to generation `0` |
-| `B` | Rewind `10` generations |
+| `B` | Rewind 10 generations |
 | `=` | Increase simulation speed |
 | `-` | Decrease simulation speed |
 | `↑` / `↓` | Navigate shape list in HUD |
