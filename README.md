@@ -132,4 +132,4 @@ make re
 
 ---
 
-**License:** No open-source license specified (all rights reserved).
+**License:** TBD (no license selected yet).
