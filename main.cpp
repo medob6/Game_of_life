@@ -14,7 +14,7 @@ namespace
     const char *kColorYellow = "\033[33m";
     const char *kColorReset = "\033[0m";
 
-    bool hasImageExtension(const std::string &name)
+    bool hasSupportedImageExtension(const std::string &name)
     {
         const size_t dot = name.find_last_of('.');
         if (dot == std::string::npos)
@@ -40,7 +40,7 @@ namespace
         while ((entry = readdir(dir)) != nullptr)
         {
             const std::string name = entry->d_name;
-            if (!name.empty() && name[0] != '.' && hasImageExtension(name))
+            if (!name.empty() && name[0] != '.' && hasSupportedImageExtension(name))
                 shapes.push_back(name);
         }
 
@@ -134,12 +134,18 @@ namespace
 
                 if (isPositiveNumber(choice))
                 {
-                    const size_t index = std::stoul(choice);
-                    if (index >= 1 && index <= shapes.size())
+                    try
                     {
-                        shapeName = shapes[index - 1];
-                        std::cout << kColorGreen << "Selected: " << shapeName << kColorReset << '\n';
-                        return true;
+                        const size_t index = std::stoul(choice);
+                        if (index >= 1 && index <= shapes.size())
+                        {
+                            shapeName = shapes[index - 1];
+                            std::cout << kColorGreen << "Selected: " << shapeName << kColorReset << '\n';
+                            return true;
+                        }
+                    }
+                    catch (const std::exception &)
+                    {
                     }
                 }
 
