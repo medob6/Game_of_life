@@ -11,8 +11,6 @@
 
 ![Demo placeholder](./video/demo.gif)
 
-_TODO: Replace this placeholder with a real capture showing pan/zoom, cell editing, HUD selection, and rewind controls._
-
 ---
 
 ## ✨ Features
@@ -132,4 +130,3 @@ make re
 
 ---
 
-**License:** TBD (no license selected yet).
