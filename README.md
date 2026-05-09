@@ -3,14 +3,13 @@
 **Infinite cellular automata in C++ with GPU-rendered grid/cells, interactive controls, and PNG-driven pattern loading.**
 
 ![Language](https://img.shields.io/badge/language-C%2B%2B-blue)
-![Standard](https://img.shields.io/badge/standard-C%2B%2B17-00599C)
 ![Build](https://img.shields.io/badge/build-Makefile-6C4A3D)
 
 ---
 
 ## 🎬 Demo
 
-![Demo placeholder](./docs/demo.gif)
+![Demo placeholder](./video/demo.gif)
 
 _TODO: Replace this placeholder with a real capture showing pan/zoom, cell editing, HUD selection, and rewind controls._
 
@@ -52,7 +51,7 @@ _TODO: Replace this placeholder with a real capture showing pan/zoom, cell editi
 
 ## 📦 Dependencies
 
-- C++ compiler (`clang++`/`c++`) with C++17 support
+- C++ compiler (`clang++`/`c++`)
 - `make`
 - OpenGL 3.3 core
 - GLFW
@@ -110,6 +109,7 @@ make re
 │   └── *.png
 └── tools/
     └── generate_shapes.cpp
+
 ```
 
 ---
