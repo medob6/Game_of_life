@@ -10,7 +10,7 @@
 
 ## 🎬 Demo
 
-![Demo placeholder](https://placehold.co/1280x720?text=Demo+GIF+Placeholder)
+![Demo placeholder](./docs/demo.gif)
 
 _Demo placeholder: add a capture of pan/zoom, cell editing, HUD pattern selection, and rewind controls._
 
@@ -132,4 +132,4 @@ make re
 
 ---
 
-**License:** All rights reserved.
+**License:** No open-source license specified (all rights reserved).
