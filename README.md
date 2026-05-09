@@ -78,7 +78,7 @@ Run with a specific pattern:
 Compiler flags used by the Makefile:
 
 ```bash
--Wall -Wextra -Werror -Iinclude
+clang++ -Wall -Wextra -Werror -std=c++17 -Iinclude
 ```
 
 Useful targets:
